@@ -1,5 +1,6 @@
 const { FusesPlugin } = require('@electron-forge/plugin-fuses');
 const { FuseV1Options, FuseVersion } = require('@electron/fuses');
+const { config } = require('node:process');
 
 module.exports = {
   packagerConfig: {
@@ -10,13 +11,12 @@ module.exports = {
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
-      config: {
-        name:"Bloxd.io",
-      },
+      config: { name: 'Bloxd.io' },
     },
     {
       name: '@electron-forge/maker-zip',
       platforms: ['darwin'],
+      config: {name: 'Bloxd.io' },
     },
     {
       name: '@electron-forge/maker-deb',
@@ -26,7 +26,8 @@ module.exports = {
     },
     {
       name: '@electron-forge/maker-rpm',
-      config: {},
+      config: {name: 'Bloxd.io' },
+
     },
     
   ],
