@@ -11,12 +11,18 @@ module.exports = {
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
-      config: { name: 'Bloxd.io' },
+      config: {
+        certificateFile: './cert.pfx',
+        certificatePassword: process.env.CERTIFICATE_PASSWORD
+      },
     },
     {
-      name: '@electron-forge/maker-zip',
-      platforms: ['darwin'],
-      config: {name: 'Bloxd.io' },
+      name: '@electron-forge/maker-dmg',
+      config: {
+      
+        format: 'ULFO',
+        config: {name: 'Bloxd.io' },
+      }
     },
     {
       name: '@electron-forge/maker-deb',
@@ -27,6 +33,7 @@ module.exports = {
     {
       name: '@electron-forge/maker-rpm',
       config: {name: 'Bloxd.io' },
+      
 
     },
     

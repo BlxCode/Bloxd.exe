@@ -1,8 +1,9 @@
 {
-  "name": "my-app",
-  "productName": "my-app",
+  "name": "Bloxd Desktop",
+  "productName": "Bloxd Desktop",
+  "author": "Blxm(BlxCode)",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "A unnoficial bloxd.io port to desktop",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
@@ -14,6 +15,7 @@
   "devDependencies": {
     "@electron-forge/cli": "^7.6.0",
     "@electron-forge/maker-deb": "^7.6.0",
+    "@electron-forge/maker-dmg": "^7.6.0",
     "@electron-forge/maker-rpm": "^7.6.0",
     "@electron-forge/maker-squirrel": "^7.6.0",
     "@electron-forge/maker-zip": "^7.6.0",
@@ -28,13 +30,10 @@
     "style-loader": "^3.3.4"
   },
   "keywords": [],
-  "author": {
-    "name": "BlxCode",
-    "email": "148653492+BlxCode@users.noreply.github.com"
-  },
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^5.3.3",
-    "electron-squirrel-startup": "^1.0.1"
+    "electron-squirrel-startup": "^1.0.1",
+    "squirrel": "^1.0.0"
   }
 }
