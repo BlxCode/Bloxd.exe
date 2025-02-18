@@ -12,5 +12,27 @@ body {
 h1{
 font-family:title;
 color:white;
+--webkit-text-stroke: 1px black;
+text-stroke: 1px black;
+font-size:100px;
+cursor:default;
+user-select:none;
+}
+a{
+  user-select:none;
+  text-decoration:none;
+}
+h2{
+  font-family:title;
+  color:white;
 
+  font-size:25px;
+  cursor:default;
+  user-select:none;
+  }
+img{
+  user-select:none;
+  border-width:0px !important;
+  border:none !important;
+  border-style:none !important;
 }

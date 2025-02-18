@@ -1,5 +1,5 @@
 {
-  "name": "Bloxd Desktop",
+  "name": "bloxd-desktop",
   "productName": "Bloxd Desktop",
   "author": "Blxm(BlxCode)",
   "version": "1.0.0",
@@ -25,7 +25,8 @@
     "@electron/fuses": "^1.8.0",
     "@vercel/webpack-asset-relocator-loader": "^1.7.3",
     "css-loader": "^6.11.0",
-    "electron": "33.2.1",
+    "electron": "^33.2.1",
+    "electron-prebuilt-compile": "8.2.0",
     "node-loader": "^2.1.0",
     "style-loader": "^3.3.4"
   },
@@ -33,7 +34,9 @@
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "electron-forge": "^5.2.4",
     "electron-squirrel-startup": "^1.0.1",
-    "squirrel": "^1.0.0"
+    "squirrel": "^1.0.0",
+    "vercel": "^41.1.4"
   }
 }
