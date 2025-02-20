@@ -1,10 +1,12 @@
 {
-  "name": "bloxd-desktop",
+  "name": "Blxm'sBloxdLauncher",
   "productName": "Blxm's Bloxd Launcher",
   "author": "Blxm(BlxCode)",
   "version": "2.0",
   "description": "A unofficial bloxd.io desktop launcher!",
   "main": ".webpack/main",
+  "homepage": "https://blxm.vercel.app/bloxdDesktop",
+  
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",

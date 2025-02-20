@@ -6,7 +6,8 @@ if (started) {
   app.quit();
 }
 const createWindow = () => {
-  var mainWindow = new BrowserWindow({ icon: './images/bloxdlauncher.png'});
+  var mainWindow = new BrowserWindow({ icon: './images/bloxdlauncher.png',title:"Blxm's Bloxd Launcher" });
+  mainWindow.setTitle(require('../package.json').productName);
   mainWindow.loadURL("https://blxm.vercel.app/assets/bloxd.exev2he/");
   mainWindow.maximize();
   

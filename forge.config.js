@@ -16,6 +16,8 @@ module.exports = {
         iconUrl: './src/images/bloxdlauncher.ico',
 
         setupIcon: './src/images/bloxdlauncher.ico',
+        name: "bloxdLauncher",
+
         certificatePassword: process.env.CERTIFICATE_PASSWORD
       },
     },
