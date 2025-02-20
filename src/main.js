@@ -1,34 +1,58 @@
-import { app, BrowserWindow } from 'electron';
-
+import { app, BrowserWindow, Menu,Tray } from 'electron';
 import path from 'node:path';
 import started from 'electron-squirrel-startup';
 
-
-
-// Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (started) {
   app.quit();
 }
-
 const createWindow = () => {
-  // Create the browser window.
-  const mainWindow = new BrowserWindow();
-  
-  // and load the index.html of the app.
+  var mainWindow = new BrowserWindow({ icon: './images/bloxdlauncher.png'});
   mainWindow.loadURL("https://blxm.vercel.app/assets/bloxd.exev2he/");
-
-  // Open the DevTools.
+  mainWindow.maximize();
   
+  const menuthing = [
+    {
+      label: 'Go To',
+      submenu: [
+        {
+          label: 'Launcher',
+          click: () => {
+            mainWindow.loadURL("https://blxm.vercel.app/assets/bloxd.exev2he/");
+          }
+        },
+        {
+          label: 'Discord',
+          click: () => {
+            mainWindow.loadURL("https://discord.app");
+          }
+        },
+        {
+          label: 'Google',
+          click: () => {
+            mainWindow.loadURL("https://google.com");
+          }
+        },
+ 	{
+		label: "Blxm's Website",
+		click: ()=>{
+		mainWindow.loadURL("https://blxm.vercel.app");
+		}
+	}
+      ]
+    }
+  ];
+
+  const menu = Menu.buildFromTemplate(menuthing);
+  Menu.setApplicationMenu(menu);  // Use setApplicationMenu for Electron app
 };
 
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
+
+
+
 app.whenReady().then(() => {
   createWindow();
-
-  // On OS X it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
+  const tray = new Tray('../images/bloxdlauncher.png');
+  
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
       createWindow();
@@ -36,14 +60,12 @@ app.whenReady().then(() => {
   });
 });
 
-// Quit when all windows are closed, except on macOS. There, it's common
-// for applications and their menu bar to stay active until the user quits
-// explicitly with Cmd + Q.
+
+
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();
   }
 });
 
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and import them here.
+

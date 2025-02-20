@@ -5,7 +5,7 @@ const { config } = require('node:process');
 module.exports = {
   packagerConfig: {
     asar: true,
-    
+    icon: './src/images/bloxdlauncher.png' 
   },
   rebuildConfig: {},
   makers: [
@@ -13,29 +13,24 @@ module.exports = {
       name: '@electron-forge/maker-squirrel',
       config: {
         certificateFile: './cert.pfx',
+        iconUrl: './src/images/bloxdlauncher.ico',
+
+        setupIcon: './src/images/bloxdlauncher.ico',
         certificatePassword: process.env.CERTIFICATE_PASSWORD
       },
     },
     {
-      name: '@electron-forge/maker-dmg',
+      name: '@electron-forge/maker-flatpak',
       config: {
-      
-        format: 'ULFO',
-        config: {name: 'Bloxd.io' },
-      }
-    },
-    {
-      name: '@electron-forge/maker-deb',
-      config: {
-        name:"Bloxd.io",
-      },
-    },
-    {
-      name: '@electron-forge/maker-rpm',
-      config: {name: 'Bloxd.io' },
-      
+        options: {
+          categories: ['Video'],
+          mimeType: ['video/h264'],
+          icon: './src/images/bloxdlauncher.png',
 
-    },
+        }
+      }
+    }
+
     
   ],
   plugins: [
