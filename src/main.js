@@ -5,6 +5,7 @@ import started from 'electron-squirrel-startup';
 if (started) {
   app.quit();
 }
+
 const createWindow = () => {
   var mainWindow = new BrowserWindow({ icon: './images/bloxdlauncher.png',title:"Blxm's Bloxd Launcher" });
   mainWindow.setTitle(require('../package.json').productName);
@@ -48,9 +49,10 @@ const createWindow = () => {
 };
 
 
-
+app.setAppUserModelId("app.vercel.blxm");
 
 app.whenReady().then(() => {
+
   createWindow();
   const tray = new Tray('../images/bloxdlauncher.png');
   

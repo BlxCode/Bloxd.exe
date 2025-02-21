@@ -1,58 +1,50 @@
-const { FusesPlugin } = require('@electron-forge/plugin-fuses');
-const { FuseV1Options, FuseVersion } = require('@electron/fuses');
-const { config } = require('node:process');
-
+const { FusesPlugin } = require("@electron-forge/plugin-fuses");
+const { FuseV1Options, FuseVersion } = require("@electron/fuses");
+const { config } = require("node:process");
 module.exports = {
   packagerConfig: {
     asar: true,
-    icon: './src/images/bloxdlauncher.png' 
+    icon: "./src/images/bloxdlauncher.png",
   },
   rebuildConfig: {},
   makers: [
     {
-      name: '@electron-forge/maker-squirrel',
+      name: "@electron-forge/maker-squirrel",
       config: {
-        certificateFile: './cert.pfx',
-        iconUrl: './src/images/bloxdlauncher.ico',
-
-        setupIcon: './src/images/bloxdlauncher.ico',
+        iconUrl: "./images/bloxdlauncher.ico",
+        setupIcon: "./images/bloxdlauncher.ico",
         name: "bloxdLauncher",
-
-        certificatePassword: process.env.CERTIFICATE_PASSWORD
       },
     },
     {
-      name: '@electron-forge/maker-flatpak',
+      name: "@electron-forge/maker-flatpak",
       config: {
         options: {
-          categories: ['Video'],
-          mimeType: ['video/h264'],
-          icon: './src/images/bloxdlauncher.png',
-
-        }
-      }
-    }
-
-    
+          categories: ["Video"],
+          mimeType: ["video/h264"],
+          icon: "./src/images/bloxdlauncher.png",
+        },
+      },
+    },
   ],
   plugins: [
     {
-      name: '@electron-forge/plugin-auto-unpack-natives',
+      name: "@electron-forge/plugin-auto-unpack-natives",
       config: {},
     },
     {
-      name: '@electron-forge/plugin-webpack',
+      name: "@electron-forge/plugin-webpack",
       config: {
-        mainConfig: './webpack.main.config.js',
+        mainConfig: "./webpack.main.config.js",
         renderer: {
-          config: './webpack.renderer.config.js',
+          config: "./webpack.renderer.config.js",
           entryPoints: [
             {
-              html: './src/index.html',
-              js: './src/renderer.js',
-              name: 'main_window',
+              html: "./src/index.html",
+              js: "./src/renderer.js",
+              name: "main_window",
               preload: {
-                js: './src/preload.js',
+                js: "./src/preload.js",
               },
             },
           ],
